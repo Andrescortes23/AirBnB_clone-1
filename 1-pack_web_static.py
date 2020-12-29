@@ -11,7 +11,7 @@ def do_pack():
     """
     local("mkdir -p versions")
     tmt = strftime("%Y%m%d%H%M%S")
-    creat = local("tar -cvzf versions/web_static_{}.tgz web-static"
+    creat = local("tar -cvzf versions/web_static_{}.tgz web_static"
                   .format(tmt))
     if creat.succeeded:
         return "versions/web_static_{}.tgz".format(tmt)
