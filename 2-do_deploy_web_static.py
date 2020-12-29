@@ -2,8 +2,10 @@
 """Fabric script that generates a .tgz archive from contents of web_static"""
 from time import strftime
 from datetime import date
-from fabric.api import local, env
+from fabric.api import local, env, run, put
+
 env.hosts = ['35.237.92.39', '35.231.86.111']
+env.user = 'ubuntu'
 
 
 def do_pack():
@@ -28,7 +30,9 @@ def do_deploy(archive_path):
 
     if archive_path:
         put(archive_path, "/tmp/")
-        run("tar xvzf archive_path -C /data/web_static/releases/web_static")
+        the_file = archive_path.replace(".tgz", "")
+        run("tar xvzf archive_path -C /data/web_static/releases/{}".format
+            (the_file))
         with cd('/tmp/'):
             sudo('rm -f archive_path')
         with cd('/data/web_static/'):
