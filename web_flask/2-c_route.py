@@ -21,9 +21,9 @@ def home2():
     return ("HBNB")
 
 
-@app.route("/c/<text>='colt'", strict_slashes=False)
+@app.route("/c/<text>", strict_slashes=False)
 def hello_route3(text):
-    """Task 2"""
+    """Passing variable"""
     b = ''
     for a in text:
         if a == '_':
