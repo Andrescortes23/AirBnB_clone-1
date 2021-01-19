@@ -14,6 +14,7 @@ def home():
     """To show Hello HBNB"""
     return ("Hello HBNB!")
 
+
 @app.route("/hbnb", strict_slashes=False)
 def home2():
     """To show HBNB"""
