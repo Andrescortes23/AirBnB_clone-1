@@ -29,7 +29,7 @@ def homeC(text):
 
 @app.route("/python", strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
-def homePython(text="is fun"):
+def homePython(text="is cool"):
     """Passing variable with default value"""
     return ("Python {}".format(text.replace('_', ' ')))
 
