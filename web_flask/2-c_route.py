@@ -22,15 +22,9 @@ def home2():
 
 
 @app.route("/c/<text>", strict_slashes=False)
-def hello_route3(text):
+def homeC(text):
     """Passing variable"""
-    b = ''
-    for a in text:
-        if a == '_':
-            b += ' '
-        else:
-            b += a
-    return ("C {}".format(b))
+    return ("C {}".format(b.replace('_', ' '))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=None)
