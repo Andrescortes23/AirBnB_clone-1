@@ -12,7 +12,7 @@ from models.city import City
 app = Flask(__name__)
 
 
-@app.route("/states_list", strict_slashes=False)
+@app.route("/cities_by_states", strict_slashes=False)
 def the_cities():
     """HTML with the cities"""
     states = storage.all(State).values()
